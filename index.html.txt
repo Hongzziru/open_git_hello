@@ -23,5 +23,4 @@ test3 - last
 
 add egoing 
 
-
-egoing - conflict1
+egoing, hello - conflict1
