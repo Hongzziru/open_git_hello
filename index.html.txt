@@ -22,3 +22,6 @@ li - remote
 test3 - last
 
 add egoing 
+
+
+egoing - conflict1
