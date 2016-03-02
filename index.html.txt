@@ -1,7 +1,8 @@
 <html>
 	<body>
 		<h1>GIT</h1>
-
+		실험2 시작
+		test2 end
 	</body>
 </html>
 
@@ -13,3 +14,4 @@ add1
 
 마스터 타이틀 추가
 >>>>>>> test
+
