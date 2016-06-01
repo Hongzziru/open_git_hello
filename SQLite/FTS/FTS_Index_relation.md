@@ -28,11 +28,37 @@
       * tablename_content 테이블 생성x
     * 일반 FTS 쿼리문 사용 .db
       * tablename_content 테이블 생성o
-> content 테이블 스키마
-> CREATE VIRTUAL TABLE abc USING fts4(a int, b text, c);
-> CREATE TABLE abc_content(docid INTEGER PRIMARY KEY, c0a, c1b, c2c);
+  * content 테이블 스키마
+  ```SQL
+   CREATE VIRTUAL TABLE abc USING fts4(a int, b text, c);
+   CREATE TABLE abc_content(docid INTEGER PRIMARY KEY, c0a, c1b, c2c);
+  ```
+  * select 결과
+  ```SQL
+   create table common(a, b)
+   create virtual table t using fts4(content="common")
+   
+   select * from common;
+   select * from t;
+   --5 rows returned in 0ms from:
+  ```
+  * match 결과
+  ```SQL
+  select * from t where t match 'a'
+  --0 rows returned in 0ms from:
+  select * from common where a like 'a'
+  --1 rows returned in 0ms from:
+  ```
+    * t테이블(content 옵션으로 생성된 FTS테이블)은 t_docsize, t_stat, t_segdir의 데이터가 존재하지 않는다.
+    * t테이블에 데이터 삽입 후 match에선 1rows가 검색된다.(이 때 검색 결과는 docid가 동일한 원본 테이블의 데이터가 검색된다.)
+    ```SQL
+    insert into t values('a', 'a')
+    insert into t(a, b) select a, b from common
+    --constraint failed:
+    --FTS table insert에선 docid를 반드시 지정해야 한다.
+    
+    
 
-
->asd
 2. aa
+  
   
