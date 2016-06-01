@@ -25,5 +25,22 @@ insert into c values('a', 'b', 'c')
 insert into t1(docid, a, b, c) values('a', 'b', 'c')
 insert into t2(docid, a, b, c) values('a', 'b', 'c')
 ```
+* 결과
+```SQL
 
+--데이터가 들어가 있는 FTS4 테이블의 DB 사이즈(contentles)
+Common.db : 151552
+
+--데이터가 들어가 있는 일반 테이블의 DB 사이즈(content 생성 전)
+Common.db : 131072
+
+--데이터가 있는 일반 테이블에서 content 옵션을 통해 FTS4테이블을 생성하고
+--FTS4 테이블에 insert into t1(docid, a, b, c) values() 까지 하고 난 후의 상태
+Common.db : 278528
+
+--데이터가 있는 일반 테이블에서 content 옵션을 통해 FTS4테이블을 생성하고
+--insert는 하지 않은 상태
+Common.db : 151552
+
+```
 
