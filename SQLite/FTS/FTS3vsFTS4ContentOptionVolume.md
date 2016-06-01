@@ -4,9 +4,9 @@
 * FTS content option에 따른 테이블 용량 비교
 
 * FTS4 content option
-  * The content option allows FTS4 to forego storing the text being indexed. The content option can be used in two ways:
-    1. The indexed documents are not stored within the SQLite database at all (a "contentless" FTS4 table), or
-    2. The indexed documents are stored in a database table created and managed by the user (an "external content" FTS4 table).
+>  * The content option allows FTS4 to forego storing the text being indexed. The content option can be used in two ways:
+>    1. The indexed documents are not stored within the SQLite database at all (a "contentless" FTS4 table), or
+>    2. The indexed documents are stored in a database table created and managed by the user (an "external content" FTS4 table).[click](https://www.sqlite.org/fts3.html#section_6_2)
 
   * content 옵션은 index 생성을 하지 않을 수 있다.
     1. 인덱스는 SQLite db에 저장하지 않을 수 있다.
