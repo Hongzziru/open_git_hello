@@ -28,9 +28,9 @@
       * tablename_content 테이블 생성x
     * 일반 FTS 쿼리문 사용 .db
       * tablename_content 테이블 생성o
-> _content 테이블 스키마
- > CREATE VIRTUAL TABLE abc USING fts4(a int, b text, c);
- > CREATE TABLE abc_content(docid INTEGER PRIMARY KEY, c0a, c1b, c2c);
+> content 테이블 스키마
+> CREATE VIRTUAL TABLE abc USING fts4(a int, b text, c);
+> CREATE TABLE abc_content(docid INTEGER PRIMARY KEY, c0a, c1b, c2c);
 
 
 >asd
