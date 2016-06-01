@@ -1,4 +1,4 @@
-#SQLite FTS3 vs FTS4 (3) index_relation
+#SQLite FTS3 vs FTS4 (3) content option_match
 
 * content 옵션을 통한 FTS4 테이블 생성 시 오리지날 테이블과 FTS 테이블 간 인덱스 관련 정리
 
@@ -77,4 +77,41 @@
   --docid  size
   --  0
   ```
-4. 
+4. content 옵션 결론
+ FTS4 테이블을 생성하여 사용자가 정의한 데이터를 docid를 통해 FTS4 테이블에 저장한 후 정의한 데이터를 match 하여 기존 데이터를 검색할 수 있다.
+ 
+ * FTS4테이블 생성 시 조회되는 데이터 [t fts4 table]
+ 
+ |docid| col |
+ |-----|-----|
+ | 1   |  a  |
+ | 2   |  b  |
+ 
+ * docid insert 후 match 가능한 데이터 [t fts4 table]
+ 
+ |docid| col |
+ |-----|-----|
+ | 1   |  c  |
+ | 2   |  d  |
+ 
+ ```SQL
+ --docid insert 전 match
+ select * from t where t match 'a'
+ --0 rows return
+ 
+ insert into t(docid, a) values(1, 'c');
+ insert into t(docid, a) values(2, 'd');
+ 
+ select * from t where t match 'a';
+ --0 rows return
+ select * from t where t match 'c';
+ --1 rows return
+ ```
+  조회된 데이터는 'c'와 match해서 나온 docid가 동일한 원본 데이터다.
+ 
+  |docid| col |
+  |-----|-----|
+  |1    |a    |
+ 
+>content 옵션으로 생성된 fts4 테이블은 docid insert를 통해 원하는 검색 인덱스를 재구성할 수 있다.
+ 
