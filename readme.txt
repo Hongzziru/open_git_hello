@@ -1,2 +1,11 @@
-수정하고 있다.
-3333
+# title
+
+*FTS table
+1. a
+2. b
+
+<code>
+import sqlite3
+
+con = sqlite3.connect()
+</code>
