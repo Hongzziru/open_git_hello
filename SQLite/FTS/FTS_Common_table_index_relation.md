@@ -38,5 +38,6 @@
   explain query plan select * from ftsf where ftsf match 'a';
   --0|0|0|SCAN TABLE ftsf VIRTUAL TABLE INDEX 4:
   ```
-* **결론**
+* **결론** 
+
   content 옵션에 따른 FTS4 테이블은 인덱스에 전혀 영향을 받지 않는다
