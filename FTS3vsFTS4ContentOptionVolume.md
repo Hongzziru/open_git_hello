@@ -14,13 +14,16 @@
     
 
 * 테이블 생성 및 데이터 삽입 
-<code>
+```SQL
 
- create table c(a text, b text, c text)
- create virtual table t1 using fts4(content="", a, b, c)
- create virtual table t2 using fts4(content="c", a, b, c)
- 
- insert into c values('a', 'b', 'c')
- insert into t1(docid, a, b, c) values('a', 'b', 'c')
- insert into t2(docid, a, b, c) values('a', 'b', 'c')
-</code>
+--테이블 생성
+create table c(a text, b text, c text)
+create virtual table t1 using fts4(content="", a, b, c)
+create virtual table t2 using fts4(content="c", a, b, c)
+--데이터 삽입
+insert into c values('a', 'b', 'c')
+insert into t1(docid, a, b, c) values('a', 'b', 'c')
+insert into t2(docid, a, b, c) values('a', 'b', 'c')
+```
+
+
