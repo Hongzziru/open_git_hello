@@ -45,9 +45,9 @@ con.commit()
 ```
 
 3. 결과
-용량 크기 순서
-FTS4 > FTS3 > 일반 테이블
-타입 유무에 따른 용량 변화 없음
+  용량 크기 순서
+  FTS4 > FTS3 > 일반 테이블
+  타입 유무에 따른 용량 변화 없음
 ```
 ordinary Type O size :  1712128
 ordinary Type X size :  1712128
@@ -56,6 +56,5 @@ FTS3 Type X size :  4161536
 FTS4 Type O size :  4808704
 FTS4 Type X size :  4808704
 ```
-
-.db  스키마
+  .db  스키마
 
