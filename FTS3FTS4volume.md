@@ -5,7 +5,7 @@
 
 * sqlite3 version - 2.4.1
 
-1. common, FTS3, FTS4 db 타입 없이 스키마 생성 
+1. common, FTS3, FTS4 db 타입 없이 스키마 생성
 ```python
 
 import sqlite3
@@ -23,7 +23,6 @@ for N in range(50000):
 ​
 con.commit()
 ```
-
 2. common, FTS3, FTS4 db 타입 존재 스키마 생성
 ```python
 
@@ -43,7 +42,6 @@ for N in range(50000):
 ​
 con.commit()
 ```
-
 3. 결과
   용량 크기 순서
   FTS4 > FTS3 > 일반 테이블
