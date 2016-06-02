@@ -25,7 +25,7 @@
   --sqlite is a database
   ```````
   
-    >The AND operator may be implicitly specified.
+    >The AND operator may be implicitly specified.[link](https://www.sqlite.org/fts3.html#section_3_1)
  
   * match는 하나의 쿼리문 안에 한번만 사용
   
@@ -44,5 +44,13 @@
   --sqlite is a database
   ```
   
-  
+  * INTERSECT
+    >The AND operator determines the intersection of two sets of documents.
 
+  ```SQL
+  select * from docs where docs match 'database'
+  intersect
+  select * from docs where docs match 'sqlite'
+  --1 rows returned:
+  --sqlite is a database
+  ```
