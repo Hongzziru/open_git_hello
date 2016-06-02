@@ -15,7 +15,7 @@
 
   
 ####Syntax - AND
-  * asdklnasd
+  * 암묵적 명시
   
   ```SQL
   select * from docs where docs match 'sqlite AND database';
@@ -24,14 +24,18 @@
   --1 rows returned:
   --sqlite is a database
   ```````
-      The AND operator may be implicitly specified.
-  * asd
   
+    >The AND operator may be implicitly specified.
+ 
+  * match는 하나의 쿼리문 안에 한번만 사용
   
-```SQL
-select * from docs where docs match 'sqlite' and docs match 'database'
---unable to use function MATCH in the requested context:
-```
+  ```SQL
+  select * from docs where docs match 'sqlite' and docs match 'database';
+  --unable to use function MATCH in the requested context:
+  select * from docs where docs match 'sqlite' and content like '%database%';
+  --1 rows returned:
+  --sqlite is a database
+  ```
   * ddd
   
   
