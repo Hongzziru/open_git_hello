@@ -36,7 +36,13 @@
   --1 rows returned:
   --sqlite is a database
   ```
-  * ddd
+  * match는 다른 where 조건과 사용 가능
+  
+  ```SQL
+  select * from docs where docs match 'database' AND content like '%sqlite%';
+  --1 rows returned:
+  --sqlite is a database
+  ```
   
   
 
