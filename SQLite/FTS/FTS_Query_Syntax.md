@@ -16,6 +16,7 @@
   
 ####Syntax - AND
   * asdklnasd
+  
   ```SQL
   select * from docs where docs match 'sqlite AND database';
   --0 rows returned:
@@ -23,7 +24,7 @@
   --1 rows returned:
   --sqlite is a database
   ```````
-    The AND operator may be implicitly specified.
+      The AND operator may be implicitly specified.
   * asd
   
   
