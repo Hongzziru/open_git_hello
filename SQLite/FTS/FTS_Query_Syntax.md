@@ -16,15 +16,13 @@
   
 ####Syntax - AND
   * asdklnasd
-  
-```SQL
-select * from docs where docs match 'sqlite AND database';
---0 rows returned:
-select * from docs where docs match 'sqlite database';
---1 rows returned:
---sqlite is a database
-```
-
+  ```SQL
+  select * from docs where docs match 'sqlite AND database';
+  --0 rows returned:
+  select * from docs where docs match 'sqlite database';
+  --1 rows returned:
+  --sqlite is a database
+  ```````
     The AND operator may be implicitly specified.
   * asd
   
