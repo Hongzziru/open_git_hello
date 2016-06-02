@@ -15,7 +15,7 @@
 
   
 ####Syntax - AND
-  1. asdklnasd
+  * asdklnasd
   
 ```SQL
 select * from docs where docs match 'sqlite AND database';
@@ -26,14 +26,14 @@ select * from docs where docs match 'sqlite database';
 ```
 
     The AND operator may be implicitly specified.
-  2. asd
+  * asd
   
   
 ```SQL
 select * from docs where docs match 'sqlite' and docs match 'database'
 --unable to use function MATCH in the requested context:
 ```
-  3. ddd
+  * ddd
   
   
 
