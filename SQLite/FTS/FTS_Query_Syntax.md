@@ -45,7 +45,6 @@
   ```
   
   * INTERSECT
-    >The AND operator determines the intersection of two sets of documents.
 
   ```SQL
   select * from docs where docs match 'database'
@@ -54,3 +53,7 @@
   --1 rows returned:
   --sqlite is a database
   ```
+    >The AND operator determines the intersection of two sets of documents.
+
+
+####Syntax - OR
