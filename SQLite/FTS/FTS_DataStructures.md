@@ -26,20 +26,19 @@
    
     a. %_content table schema
 
-      ```SQL
-      -- Virtual table declaration
-      CREATE VIRTUAL TABLE abc USING fts4(a NUMBER, b TEXT, c);
-      -- Corresponding %_content table declaration
-      CREATE TABLE abc_content(docid INTEGER PRIMARY KEY, c0a, c1b, c2c);
-      ```
-    
+    ```SQL
+    -- Virtual table declaration
+    CREATE VIRTUAL TABLE abc USING fts4(a NUMBER, b TEXT, c);
+    -- Corresponding %_content table declaration
+    CREATE TABLE abc_content(docid INTEGER PRIMARY KEY, c0a, c1b, c2c);
+    ```  
     b. t_content
    
-      |docid|a|b|
-      |----|----|----|
-      |1|a|apple is taste|
-      |2|b|banana good|
-      |3|c|car is fast|
-      |4|d|dog cute|
+    |docid|a|b|
+    |----|----|----|
+    |1|a|apple is taste|
+    |2|b|banana good|
+    |3|c|car is fast|
+    |4|d|dog cute|
 
 
