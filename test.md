@@ -1,6 +1,6 @@
 #Dynamic Programming
 
-###Min Cost Path
+###Min Cost Path [link](http://www.geeksforgeeks.org/dynamic-programming-set-6-min-cost-path/)
 ```python
 /* A Naive recursive implementation of MCP(Minimum Cost Path) problem */
 def minCost(cost, m, n):
@@ -29,9 +29,8 @@ print minCost(cost,2,2)
 
 Output : 8
 ```
->[link](http://www.geeksforgeeks.org/dynamic-programming-set-6-min-cost-path/)
 
-* 알고리즘의 tree
+* Min Cost Path tree
 ```
 mC refers to minCost()
                                     mC(2, 2)
@@ -42,20 +41,18 @@ mC refers to minCost()
              /      |      \     /      |      \         /      |       \
        mC(0,0) mC(0,1) mC(1,0) mC(0,1) mC(0,2) mC(1,1) mC(1,0) mC(1,1) mC(2,0) 
 ```
-* 위 알고리즘은 3x3 Matrix에서 M(2,2)에서 시작하여 탐색 가능한 모든 경로를 탐색하여 가중치가 가장 적은 path를 선택하게 된다.
+   * 위 알고리즘은 3x3 Matrix에서 M(2,2)에서 시작하여 탐색 가능한 모든 경로를 탐색하여 가중치가 가장 적은 path를 선택하게 된다.
 
 
- 비행기게임 - Max Coin Algorithm 문제 
+###비행기게임 - Max Coin Algorithm 문제 
+>map은 N x 5 로 구성되어 있다. 비행기는 정 중앙에서 출발하게 되며 1턴에 좌,우 또는 대기할 수 있다. 1턴에서 map은 계속해서 내려오게 된다.
+```   
+   0 : 아무것도 아님
+   1 : coin
+   2 : 적
+   ▲ : 비행기
 
-map은 N x 5 로 구성되어 있다. 비행기는 정 중앙에서 출발하게 되며 1턴에 좌,우 또는 대기할 수 있다. 
-1턴에서 map은 계속해서 내려오게 된다.
-
-0 : 아무것도 아님
-1 : coin
-2 : 적
-▲ : 비행기
-
- [  [0,1, 2 ,1,1],
+      [  [0,1, 2 ,1,1],
          [1,2, 1 ,0,1],
          [1,2, 1 ,1,1],
          [0,0, 1 ,0,0],
@@ -65,6 +62,7 @@ map은 N x 5 로 구성되어 있다. 비행기는 정 중앙에서 출발하게
          [1,2, 0 ,1,1],
          [1,1, 1 ,1,1] ]
                ▲
+```
 비행기는 현재 위치 다음에 이동할 수 있는 경로에 모두 2가 있는 상태라면 폭탄을 1회 사용하여 현재 위치에서 5 x 5 에 해당하는 모든 2를 제거할 수 있다.
 
 ex)
