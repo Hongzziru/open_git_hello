@@ -9,12 +9,12 @@
  insert into t values('c', 'car is fast');
  insert into t values('d', 'dog cute');
  ```
- |a|b|
- |----|----|
- |a|apple is taste|
- |b|banana good|
- |c|car is fast|
- |d|dog cute|
+|a|b|
+|----|----|
+|a|apple is taste|
+|b|banana good|
+|c|car is fast|
+|d|dog cute|
  
 
 
