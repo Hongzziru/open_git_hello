@@ -58,7 +58,7 @@
       size BLOB
     );
     ```
-    b.docsize 테이블의 docid는 동일한 값이 대응되며 size는 사용자 정의 열의 수를 blob로 나타낸다. stat 테이블은 항상 id가 0인 단일 행이며, value는 사용자 정의 컬럼 수 +1의값이 blob로 나타낸다. value의 blob중 첫째 varint는 FTS 테이블의 총 row 수를 나타내며 두번째 varint는 테이블의 모든행에 저장된 토큰의 총 수를 나타낸다.
+    b. docsize 테이블의 docid는 동일한 값이 대응되며 size는 사용자 정의 열의 수를 blob로 나타낸다. stat 테이블은 항상 id가 0인 단일 행이며, value는 사용자 정의 컬럼 수 +1의값이 blob로 나타낸다. value의 blob중 첫째 varint는 FTS 테이블의 총 row 수를 나타내며 두번째 varint는 테이블의 모든행에 저장된 토큰의 총 수를 나타낸다.
   
     t_docsize
     
@@ -74,6 +74,8 @@
   |id|value|
   |----|----|
   |0| |
+  
+  
   
   * %_segments, %_segdir
   
@@ -97,3 +99,5 @@
       PRIMARY KEY(level, idx)
     );
     ```
+    
+    b. 위 스키마는 FTS 인덱스를 직접 저장하지 않고, 하나 이상의 b-tree 구조를 사용한다. %_segdir 테이블은 각 행에 하나의 b-tree가 있고 root노드와 b-tree관련 메타 데이터를 가진다. %_segments 테이블은 루트가 아닌 다른 모든 b-tree의 노드를 가진다. 
