@@ -122,6 +122,27 @@
   --a database is a software system
   --sqlite is a database
   --java is a nice
+  
+  SELECT * FROM docs WHERE docs MATCH 'sqlite "software system"';
+  SELECT * FROM docs WHERE docs MATCH 'sqlite ("software system")';
+  SELECT * FROM docs WHERE docs MATCH 'sqlite (software system)';
+  --sqlite is a software system
+  
+  SELECT * FROM docs WHERE docs MATCH 'sqlite OR (software system)';
+  --a database is a software system
+  --sqlite is a software system
+  
+  SELECT * FROM docs WHERE docs MATCH 'sqlite OR "software system"';
+  SELECT * FROM docs WHERE docs MATCH 'sqlite OR ("software system")';
+  --a database is a software system
+  --sqlite is a software system
+  --sqlite is a database
   ```
+  
+  result
+  >논리적으로 맞는 결과를 도출하려면 "", ("") 를 쓰면 된다.
+   
+  
+  
   
   
