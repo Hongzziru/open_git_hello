@@ -1,35 +1,22 @@
-#Python StringIO를 통한 pickle test
+#Design Pattern - Builder Pattern
 
-###code
+###정리
+>객체의 생성은 변수 및 다양한 정보를 설정해야 객체가 생성된다. 만약 객체 생성에 필요한 변수와 정보의 양이 늘어난다면 객체의 생성이 매우 번거롭게 된다. 그래서 Builder pattern의 Builder는 객체 생성 과정의 복잡성을 넘기는 것이 포인트
 
-```python
-import pickle
-import StringIO
+###Cafe 예제
 
-phone = {'a': 12, 'b': 34, 'c': 56, 'd': 78}
-li = ['string',1234,0.12]
-t = (phone, li)
+* 생성되는 Cafe 객체 클래스
+  Cafe객체를 생성하기 위한 모든 정보를 정의하고 있다.
 
-f = open('test.txt','w')
+  ```python
+  #objcet
+  class Cafe(object):
+    def __init__(self, name):
+        self.name = name
+        self.address = None
+        self.info = None
+        self.cofees = []
 
-pickle.dump(t,f)
-f.close()
-
-f = open('test.txt')
-
-
-print pickle.load(f)
-
-f2 = StringIO.StringIO()
-pickle.dump(t, f2)
-f2.flush()
-
-ins = StringIO.StringIO(f2.getvalue())
-print pickle.load(ins)
-```
-
-###Result
-```
-({'a': 12, 'c': 56, 'b': 34, 'd': 78}, ['string', 1234, 0.12])
-({'a': 12, 'c': 56, 'b': 34, 'd': 78}, ['string', 1234, 0.12])
-```
+    def view(self):
+        print 'Cafe name : ', self.name, '   Cafe address : ', self.address, '   Cafe info : ', self.info,
+  ```
