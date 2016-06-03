@@ -58,6 +58,7 @@
   ```
 
 * Result
+  
   객체를 deepcopy하여 동일한 데이터 셋을 사용할 수 있다. 
   ```python
   Create object
