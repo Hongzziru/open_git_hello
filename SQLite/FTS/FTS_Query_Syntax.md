@@ -13,7 +13,8 @@
 |2|sqlite is a software system|
 |3|sqlite is a database|
 
-  
+* AND OR NOT 은 항상 대문자로 작성해야 한다.
+
 ####Syntax - AND
   * 암묵적 명시
   
@@ -56,5 +57,34 @@
     >The AND operator determines the intersection of two sets of documents.
 
 
-####Syntax - OR
-  * 
+####Syntax - OR, NOT
+  new data insert
+  ```SQL
+  insert into docs values('python good software');
+  insert into docs values('java is a nice');
+  ```
+  
+  * basic OR, NOT
+  ```SQL
+  select * from docs where docs match 'good OR system';
+  --3 rows returned:
+  --"a database is a software system"
+  --"sqlite is a software system"
+  --"python good software"
+  
+  select * from docs where docs match 'good' OR content like '%nice%';
+  --unable to use function MATCH in the requested context:
+  
+  
+  select * from docs where docs match 'database NOT sqlite';
+  --0 rows returned:
+  select * from docs where docs match 'database -sqlite';
+  --1 rows returned:
+  --"a database is a software system"
+  
+  select * from docs where docs match 'software -sqlite -database';
+  --1 rows returned:
+  --"python good software"
+  
+  ```
+  
