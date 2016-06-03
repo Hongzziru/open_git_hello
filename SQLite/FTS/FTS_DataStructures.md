@@ -1,14 +1,14 @@
 #FTS Data structures
 
-###Test Data
+  * Test Data
   
- ```SQL
- create virtual table t using fts4(a, b);
- insert into t values('a', 'apple is taste');
- insert into t values('b', 'banana good');
- insert into t values('c', 'car is fast');
- insert into t values('d', 'dog cute');
- ```
+  ```SQL
+  create virtual table t using fts4(a, b);
+  insert into t values('a', 'apple is taste');
+  insert into t values('b', 'banana good');
+  insert into t values('c', 'car is fast');
+  insert into t values('d', 'dog cute');
+  ```
 |a|b|
 |----|----|
 |a|apple is taste|
