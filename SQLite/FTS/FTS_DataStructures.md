@@ -20,10 +20,11 @@
 
 
 ###Shadow Tables
+  
   * %_content table
   >The %_content table contains the unadulterated data inserted by the user into the FTS virtual table by the user. If the user does not explicitly supply a "docid" value when inserting records, one is selected automatically by the system.[link](https://www.sqlite.org/fts3.html#section_9_1)
 
-    * %_content table schema
+      * %_content table schema
 
     ```SQL
     -- Virtual table declaration
@@ -34,11 +35,11 @@
     
     * t_content
    
-      |docid|a|b|
-      |----|----|----|
-      |1|a|apple is taste|
-      |2|b|banana good|
-      |3|c|car is fast|
-      |4|d|dog cute|
+|docid|a|b|
+|----|----|----|
+|1|a|apple is taste|
+|2|b|banana good|
+|3|c|car is fast|
+|4|d|dog cute|
 
   * 
