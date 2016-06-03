@@ -92,6 +92,7 @@
   bcafe.view()
   ```
 * Result
+
   ```
   Cafe name :  A    Cafe address :  a    Cafe info :  a
   Cafe name :  B    Cafe address :  b    Cafe info :  b
