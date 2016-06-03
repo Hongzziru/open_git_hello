@@ -1,6 +1,7 @@
 #FTS Data structures
 
-  * Test Data
+###Test Data
+ * Data Schema
   
   ```SQL
   create virtual table t using fts4(a, b);
