@@ -21,7 +21,7 @@
 ###Shadow Tables
  * %_content table
  
-  >The %_content table contains the unadulterated data inserted by the user into the FTS virtual table by the user. If the user does not explicitly supply a "docid" value when inserting records, one is selected automatically by the system.
+  >The %_content table contains the unadulterated data inserted by the user into the FTS virtual table by the user. If the user does not explicitly supply a "docid" value when inserting records, one is selected automatically by the system.[link](https://www.sqlite.org/fts3.html#section_9_1)
   
   ```SQL
   -- Virtual table declaration
