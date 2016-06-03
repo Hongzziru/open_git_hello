@@ -1,8 +1,13 @@
-### *.run 파일 설치
+###게시판 페이징 Basic SQL
 
-* 파일에 실행 권한을 주고 설치를 진행해야 한다.
-  파일 이름 : install_test.run
-```shell
-# chmod a_x install_test.run
-# ./install_test.run
+```SQL
+SELECT empno, ename, hiredate
+FROM (	SELECT ROWNUM rn, empno, ename, hiredate
+		FROM (
+				SELECT empno, ename, hiredate
+    			FROM EMP
+    			ORDER BY hiredate	
+    	)
+	)
+WHERE rn BETWEEN 6 AND 10;
 ```
