@@ -58,7 +58,7 @@
 
 
 ####Syntax - OR, NOT
-  new data insert
+  * NEW DATA INSERT
   ```SQL
   insert into docs values('python good software');
   insert into docs values('java is a nice');
@@ -87,4 +87,17 @@
   --"python good software"
   
   ```
+  
+  * UNION
+  ```SQL
+  select * from docs where docs match 'sqlite OR java';
+  ```
+  This query is equivalent to the above.
+  ```SQL
+  select * from docs where docs match 'sqlite'
+  UNION
+  select * from docs where docs match 'java';
+  ```
+  
+  
   
