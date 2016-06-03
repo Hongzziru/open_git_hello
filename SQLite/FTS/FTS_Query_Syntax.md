@@ -98,6 +98,30 @@
   UNION
   select * from docs where docs match 'java';
   ```
+
+###TEST
   
+  * 괄호, ""에 의한 return 
+  ```SQL
+  SELECT * FROM docs WHERE docs MATCH 'sqlite OR database library';
+  --0 rows returned:
+  
+  SELECT * FROM docs WHERE docs MATCH 'sqlite OR database system';
+  --a database is a software system
+  --sqlite is a software system
+  
+  SELECT * FROM docs WHERE docs MATCH 'java OR database system';
+  SELECT * FROM docs WHERE docs MATCH 'java OR (database system)';
+  --"a database is a software system"
+  
+  SELECT * FROM docs WHERE docs MATCH 'java OR "database system"';
+  SELECT * FROM docs WHERE docs MATCH 'java OR ("database system")';
+  --"java is a nice"
+  
+  SELECT * FROM docs WHERE docs MATCH 'java OR "database"';
+  --a database is a software system
+  --sqlite is a database
+  --java is a nice
+  ```
   
   
